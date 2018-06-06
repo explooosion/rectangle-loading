@@ -7,11 +7,11 @@ let type = 'normal'
 
 let limit = 5 // finish in ? seconds 
 
-timer = setInterval(() => start(limit), 50)
-
 document.querySelector('.btnNormal').addEventListener('click', () => type = 'normal')
 document.querySelector('.btnReversal').addEventListener('click', () => type = 'reversal')
 document.querySelector('.txtTime').addEventListener('change', (e) => limit = e.target.value)
+
+timer = setInterval(() => start(limit), 50)
 
 /**
  * Start to run animation
@@ -26,7 +26,8 @@ function start(limit) {
   }
   if (finish >= 1000) {
     finish = 0
-    // clearInterval(timer)
+    // repeat or not
+    // clearInterval(timer) 
   }
   switch (type) {
     case 'normal':
