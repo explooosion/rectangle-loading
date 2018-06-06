@@ -5,7 +5,7 @@ let millisecond = 0
 let timer = null
 let type = 'normal'
 
-let limit = 5 // finish in ? seconds 
+let limit = 5 // during(sec) 
 
 const slice1 = document.querySelector('.slice1')
 const slice2 = document.querySelector('.slice2')
@@ -19,7 +19,7 @@ timer = setInterval(() => start(limit), 50)
 
 /**
  * Start to run animation
- * @param {Number} limit time remain
+ * @param {Number} time during
  */
 function start(limit) {
   finish = finish + (50 / limit)
@@ -47,8 +47,8 @@ function start(limit) {
 
 /**
  * Run caculate
- * @param {Object} element target
- * @param {Number} degree rotate
+ * @param {Number} finish finish percents
+ * @param {Number} total total percents
  */
 function run(finish, total) {
   rotate(slice1, caculate(finish, total).first)
@@ -58,8 +58,8 @@ function run(finish, total) {
 
 /**
  * Run caculateReversal
- * @param {Number} x finish percents
- * @param {Number} all total percents
+ * @param {Number} finish finish percents
+ * @param {Number} total total percents
  */
 function runReversal(finish, total) {
   rotate(slice1, caculateReversal(finish, total).first)
@@ -69,8 +69,8 @@ function runReversal(finish, total) {
 
 /**
  * Set rotate
- * @param {Number} x finish percents
- * @param {Number} all total percents
+ * @param {Object} element target element
+ * @param {Number} degree rotate
  */
 function rotate(element, degree) {
   element.setAttribute('style', `
