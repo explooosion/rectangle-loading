@@ -1,5 +1,22 @@
-.home {
+* {
+  font-family: 'Microsoft JhengHei', sans-serif;
+}
+
+html,
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 2rem;
+  background-color: #282a36;
+  color: #efefef;
+}
+
+#app {
   text-align: center;
+  input {
+    padding: 2px 4px;
+    font-size: 1rem;
+  }
   button {
     width: 120px;
     height: 36px;
@@ -8,6 +25,9 @@
     border: 0;
     background-color: #687ECA;
     color: #eee;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 6px;
     cursor: pointer;
     &:hover {
       background-color: #5F73B9;

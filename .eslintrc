@@ -15,7 +15,6 @@
     "semi": 0,
     "no-console": "off",
     "no-empty": "off",
-    "no-var": 0,
     "no-alert": 0,
     "no-undef": 0,
     "no-unused-vars": 0,
@@ -36,7 +35,5 @@
     "arrow-body-style": 0,
     "comma-dangle": 0,
     "eol-last": 0,
-    "import/first": 0,
-    "import/no-unresolved": 0
   }
 }

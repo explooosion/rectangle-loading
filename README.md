@@ -7,10 +7,6 @@
 yarn install
 ```
 
-```bash
-yarn start
-```
-
 ## Build
 
 ```bash

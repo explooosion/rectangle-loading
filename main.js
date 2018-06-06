@@ -1,23 +1,23 @@
-// 分子, 分母 => 1/2 = 50%
-// 分子, 分母 => 2/3 = 66.6%
 let total = 1000
 let finish = 0
+
 let millisecond = 0
-let timer
+let timer = null
 let type = 'normal'
 
-const limit = 5 // finish in ? seconds
+let limit = 5 // finish in ? seconds 
 
-$(document).ready(function () {
+timer = setInterval(() => start(limit), 50)
 
-  timer = setInterval(() => auto(limit), 50)
+document.querySelector('.btnNormal').addEventListener('click', () => type = 'normal')
+document.querySelector('.btnReversal').addEventListener('click', () => type = 'reversal')
+document.querySelector('.txtTime').addEventListener('change', (e) => limit = e.target.value)
 
-  $('#btnNormal').click(() => type = 'normal')
-  $('#btnReversal').click(() => type = 'reversal')
-
-})
-
-function auto(limit) {
+/**
+ * Start to run animation
+ * @param {Number} limit time remain
+ */
+function start(limit) {
   finish = finish + (50 / limit)
   millisecond = millisecond + 50
   if (millisecond >= 1000) {
@@ -40,18 +40,33 @@ function auto(limit) {
   }
 }
 
+/**
+ * Run caculate
+ * @param {Object} element target
+ * @param {Number} degree rotate
+ */
 function run(finish, total) {
   rotate($(".slice1"), caculate(finish, total).first)
   rotate($(".slice2"), caculate(finish, total).second)
   $(".status").html(`${Number.parseFloat(finish / 10).toFixed(0)} % `)
 }
 
+/**
+ * Run caculateReversal
+ * @param {Number} x finish percents
+ * @param {Number} all total percents
+ */
 function runReversal(finish, total) {
   rotate($(".slice1"), caculateReversal(finish, total).first)
   rotate($(".slice2"), caculateReversal(finish, total).second)
   $(".status").html(`${Number.parseFloat(finish / 10).toFixed(0)} % `)
 }
 
+/**
+ * Set rotate
+ * @param {Number} x finish percents
+ * @param {Number} all total percents
+ */
 function rotate(element, degree) {
   element.css({
     '-webkit-transform': 'rotate(' + degree + 'deg)',
@@ -63,6 +78,11 @@ function rotate(element, degree) {
   })
 }
 
+/**
+ * CaculateReversal rotate
+ * @param {Number} x finish percents
+ * @param {Number} all total percents
+ */
 function caculateReversal(x, all) {
   const finish = x
   const total = all
@@ -81,6 +101,11 @@ function caculateReversal(x, all) {
   }
 }
 
+/**
+ * Caculate rotate
+ * @param {Number} x finish percents
+ * @param {Number} all total percents
+ */
 function caculate(x, all) {
   let firstHalfAngle = 180
   let secondHalfAngle = 0

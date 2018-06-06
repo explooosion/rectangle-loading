@@ -1,0 +1,64 @@
+.pie {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5p1WTa-qGe9j1ing7-jtdyfgIBvo24YeWU39Wah4Af9hDFLhH");
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position: center;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  clip: rect(50px, 150px, 150px, 50px); }
+  .pie .clip1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    clip: rect(0px, 200px, 200px, 100px); }
+  .pie .slice1 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(0, 0, 0, 0.5);
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    clip: rect(0px, 100px, 200px, 0px);
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0); }
+  .pie .clip2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    clip: rect(0, 100px, 200px, 0px); }
+  .pie .slice2 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(0, 0, 0, 0.5);
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    clip: rect(0px, 200px, 200px, 100px);
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0); }
+  .pie .status {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    color: #efefef;
+    font-size: 1.2rem;
+    font-weight: 600; }
