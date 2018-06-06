@@ -85,12 +85,10 @@ function rotate(element, degree) {
 
 /**
  * CaculateReversal rotate
- * @param {Number} x finish percents
- * @param {Number} all total percents
+ * @param {Number} finish finish percents
+ * @param {Number} total total percents
  */
-function caculateReversal(x, all) {
-  const finish = x
-  const total = all
+function caculateReversal(finish, total) {
   const remain = total - finish
   let firstHalfAngle = 0
   let secondHalfAngle = 180
@@ -108,13 +106,13 @@ function caculateReversal(x, all) {
 
 /**
  * Caculate rotate
- * @param {Number} x finish percents
- * @param {Number} all total percents
+ * @param {Number} finish finish percents
+ * @param {Number} total total percents
  */
-function caculate(x, all) {
+function caculate(finish, total) {
   let firstHalfAngle = 180
   let secondHalfAngle = 0
-  const drawAngle = x / all * 360
+  const drawAngle = finish / total * 360
   if (drawAngle <= 180) {
     firstHalfAngle = drawAngle
   } else {
