@@ -7,6 +7,10 @@ let type = 'normal'
 
 let limit = 5 // finish in ? seconds 
 
+const slice1 = document.querySelector('.slice1')
+const slice2 = document.querySelector('.slice2')
+const status = document.querySelector('.status')
+
 document.querySelector('.btnNormal').addEventListener('click', () => type = 'normal')
 document.querySelector('.btnReversal').addEventListener('click', () => type = 'reversal')
 document.querySelector('.txtTime').addEventListener('change', (e) => limit = e.target.value)
@@ -47,9 +51,9 @@ function start(limit) {
  * @param {Number} degree rotate
  */
 function run(finish, total) {
-  rotate($(".slice1"), caculate(finish, total).first)
-  rotate($(".slice2"), caculate(finish, total).second)
-  $(".status").html(`${Number.parseFloat(finish / 10).toFixed(0)} % `)
+  rotate(slice1, caculate(finish, total).first)
+  rotate(slice2, caculate(finish, total).second)
+  status.innerHTML = `${Number.parseFloat(finish / 10).toFixed(0)} % `
 }
 
 /**
@@ -58,9 +62,9 @@ function run(finish, total) {
  * @param {Number} all total percents
  */
 function runReversal(finish, total) {
-  rotate($(".slice1"), caculateReversal(finish, total).first)
-  rotate($(".slice2"), caculateReversal(finish, total).second)
-  $(".status").html(`${Number.parseFloat(finish / 10).toFixed(0)} % `)
+  rotate(slice1, caculateReversal(finish, total).first)
+  rotate(slice2, caculateReversal(finish, total).second)
+  status.innerHTML = `${Number.parseFloat(finish / 10).toFixed(0)} % `
 }
 
 /**
@@ -69,14 +73,14 @@ function runReversal(finish, total) {
  * @param {Number} all total percents
  */
 function rotate(element, degree) {
-  element.css({
-    '-webkit-transform': 'rotate(' + degree + 'deg)',
-    '-moz-transform': 'rotate(' + degree + 'deg)',
-    '-ms-transform': 'rotate(' + degree + 'deg)',
-    '-o-transform': 'rotate(' + degree + 'deg)',
-    'transform': 'rotate(' + degree + 'deg)',
-    'zoom': 1
-  })
+  element.setAttribute('style', `
+    -webkit-transform: rotate(${degree}deg);
+    -moz-transform: rotate(${degree}degg);
+    -ms-transform: rotate(${degree}deg);
+    -o-transform: rotate(${degree}deg);
+    transform: rotate(${degree}deg);
+    zoom: 1;`
+  )
 }
 
 /**
