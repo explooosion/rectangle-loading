@@ -1,0 +1,26 @@
+.home {
+  text-align: center;
+  button {
+    width: 120px;
+    height: 36px;
+    padding: 2px 4px;
+    margin: 2px 4px;
+    border: 0;
+    background-color: #687ECA;
+    color: #eee;
+    cursor: pointer;
+    &:hover {
+      background-color: #5F73B9;
+    }
+  }
+  a {
+    color: aqua;
+    &:hover {
+      opacity: .8;
+    }
+  }
+  .skill {
+    display: flex;
+    justify-content: center;
+  }
+}
